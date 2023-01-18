@@ -8,16 +8,18 @@
 </head>
 <body>
     <?php
-        Function tableaux(){
+        Function tableaux($param1,$param2){
     ?>
-        <table border=2>
+        <table border=1>
             <tr>
-                <td>preom</td>
-                <td>nom</td>
+                <td><?=$param1?></td>
+                <td><?=$param2?></td>
+                <td>age</td>
             </tr>
             <tr>
                 <td>simon</td>
                 <td>briaux</td>
+                <td>18</td>
             </tr>
         </table>
     <?php

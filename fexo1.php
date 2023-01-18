@@ -12,11 +12,11 @@ include ("Fonction.php")
     ?>
 
     <?php
-        tableaux();
+        tableaux("test","test2");
     ?>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <?php
-        tableaux();
+        tableaux("moi","encormoi");
     ?>
 
 </body>
