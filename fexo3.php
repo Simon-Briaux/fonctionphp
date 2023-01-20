@@ -10,5 +10,10 @@
     <?php
     include ("Fonction.php");
     ?>
+    <?php
+    moy("6","8","15","0","12","16");
+    ?>
+
+
 </body>
 </html>
