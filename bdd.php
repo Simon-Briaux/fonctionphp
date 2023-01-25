@@ -8,16 +8,8 @@
     
 </head>
 <body>
-    <?php 
-    echo "Coucou"?>
-    <br><br><br><br><br><br>
-<br><br>
+
 <?php 
-
-
-
-
-
 try {
    $ipserver="192.168.65.12";
    $nomBase="medecin";
@@ -30,9 +22,16 @@ try {
    $requete= "select * from Medecin";
    $resultat=$GLOBALS["pdo"]->query($requete);
  
- 
    $tabMedecin = $resultat->fetchALL();
   foreach ($tabMedecin as $Medecin){
+    
+  }
+
+  $requete= "select * from Patient";
+  $resultat=$GLOBALS["pdo"]->query($requete);
+
+  $tabPatient = $resultat->fetchALL();
+  foreach ($tabPatient as $Patient){
     
   }
    
@@ -40,17 +39,37 @@ try {
     echo "error est : ".$error->getMessage();
 }
 ?>
-
     <form action="" method="post">
-        <select>
+    <label for="medecin">Medecin : <label>    
+        <select name="medecin">
             <?php
                 foreach ($tabMedecin as $Medecin) {
                     ?>
-            <option value="<?=$Medecin["id"]?>"><?=$Medecin["nom"]." ".$Medecin["prenom"]?>s</option>
+            <option value="<?=$Medecin["id"]?>"><?=$Medecin["nom"]." ".$Medecin["prenom"]?></option>
             <?php
                 }
             ?>
         </select>
     </form>
+
+    <form action="" method="post">
+    <label for="patient">Patient : <label>    
+        <select name="patient">
+            <?php
+                foreach ($tabPatient as $Patient) {
+                    ?>
+            <option value="<?=$Patient["id"]?>"><?=$Patient["nom"]." ".$Patient["prenom"]?></option>
+            <?php
+                }
+            ?>
+        </select>
+    </form>
+    <br>
+    <label for="appt">choisir l'heure:</label>
+
+<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+    <br>
+    <input type="button" value="Envoyer">
 </body>
 </html> 
