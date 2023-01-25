@@ -33,12 +33,24 @@ try {
  
    $tabMedecin = $resultat->fetchALL();
   foreach ($tabMedecin as $Medecin){
-    echo $Medecin["nom"]." ".$Medecin["prenom"]."<br>";
+    
   }
    
 } catch (Exception  $error) {
     echo "error est : ".$error->getMessage();
 }
 ?>
+
+    <form action="" method="post">
+        <select>
+            <?php
+                foreach ($tabMedecin as $Medecin) {
+                    ?>
+            <option value="<?=$Medecin["id"]?>"><?=$Medecin["nom"]." ".$Medecin["prenom"]?>s</option>
+            <?php
+                }
+            ?>
+        </select>
+    </form>
 </body>
 </html> 
